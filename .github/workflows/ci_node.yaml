@@ -1,0 +1,47 @@
+name: CI (Node)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "x402-rest/server/node-typescript/**"
+      - "x402-mcp/server/node-typescript/**"
+      - ".github/workflows/ci_node.yaml"
+      - "!**.md"
+  pull_request:
+    paths:
+      - "x402-rest/server/node-typescript/**"
+      - "x402-mcp/server/node-typescript/**"
+      - ".github/workflows/ci_node.yaml"
+      - "!**.md"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ["20", "22"]
+        sample: ["x402-rest", "x402-mcp"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        working-directory: ${{ matrix.sample }}/server/node-typescript
+        run: pnpm install
+
+      - name: Build TypeScript
+        working-directory: ${{ matrix.sample }}/server/node-typescript
+        run: pnpm run build

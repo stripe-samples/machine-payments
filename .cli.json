@@ -1,0 +1,14 @@
+{
+  "name": "machine-payments",
+  "configureDotEnv": true,
+  "integrations": [
+    {
+      "name": "main",
+      "clients": [],
+      "servers": [
+        "node-typescript",
+        "python"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+# Environment
+.env
+.env.local
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode
+.idea
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+.uv/
+
+# Node/TypeScript
+node_modules/
+dist/
+*.tsbuildinfo
+package-lock.json
+pnpm-lock.yaml
+yarn.lock

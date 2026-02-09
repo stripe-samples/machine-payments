@@ -1,0 +1,27 @@
+[project]
+name = "x402-rest-python"
+version = "1.0.0"
+description = "x402 REST API sample with FastAPI and Stripe"
+requires-python = ">=3.10"
+dependencies = [
+    "x402[fastapi,evm]",
+    "stripe>=11.0.0",
+    "python-dotenv>=1.0.0",
+    "uvicorn>=0.30.0",
+]
+
+[dependency-groups]
+dev = ["ruff>=0.8.0"]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.format]
+quote-style = "double"

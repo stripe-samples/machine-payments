@@ -1,0 +1,26 @@
+{
+  "name": "x402-rest-node-typescript",
+  "private": true,
+  "type": "module",
+  "description": "x402 REST API sample with Stripe using Hono",
+  "scripts": {
+    "dev": "tsx main.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.9",
+    "@x402/core": "^2.2.0",
+    "@x402/evm": "^2.2.0",
+    "@x402/fetch": "^2.2.0",
+    "@x402/hono": "^2.2.0",
+    "dotenv": "^16.6.1",
+    "hono": "^4.11.7",
+    "stripe": "^20.3.0",
+    "viem": "^2.45.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.19.8",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
