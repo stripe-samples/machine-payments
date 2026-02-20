@@ -33,6 +33,8 @@ if (!facilitatorUrl) {
 }
 const facilitatorClient = new HTTPFacilitatorClient({ url: facilitatorUrl });
 
+const validPayToAddresses = new Set<string>();
+
 // This function determines where payments should be sent. It either:
 // 1. Extracts the address from an existing payment header (for retry/verification), or
 // 2. Creates a new Stripe PaymentIntent to generate a fresh deposit address.
@@ -45,7 +47,10 @@ async function createPayToAddress(context: any): Promise<string> {
     const toAddress = decoded.payload?.authorization?.to;
 
     if (toAddress && typeof toAddress === "string") {
-      return toAddress;
+      if (!validPayToAddresses.has(toAddress.toLowerCase())) {
+        throw new Error("Invalid payTo address: not found in server cache");
+      }
+      return toAddress.toLowerCase();
     }
 
     throw new Error(
@@ -95,7 +100,8 @@ async function createPayToAddress(context: any): Promise<string> {
     ).toFixed(2)} -> ${payToAddress}`,
   );
 
-  return payToAddress;
+  validPayToAddresses.add(payToAddress.toLowerCase());
+  return payToAddress.toLowerCase();
 }
 
 // The middleware protects the route and declares the payment requirements.
