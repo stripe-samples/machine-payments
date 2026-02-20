@@ -36,6 +36,8 @@ facilitator = HTTPFacilitatorClient(FacilitatorConfig(url=FACILITATOR_URL))
 server = x402ResourceServer(facilitator)
 server.register("eip155:84532", ExactEvmServerScheme())
 
+valid_pay_to_addresses: set[str] = set()
+
 
 async def create_pay_to_address(context: Any) -> str | None:
     """
@@ -53,6 +55,8 @@ async def create_pay_to_address(context: Any) -> str | None:
             to_address = decoded.get("payload", {}).get("authorization", {}).get("to")
 
             if to_address and isinstance(to_address, str):
+                if to_address.lower() not in valid_pay_to_addresses:
+                    raise ValueError("Invalid payTo address: not found in server cache")
                 return to_address.lower()
         except (json.JSONDecodeError, base64.binascii.Error):
             pass
@@ -91,6 +95,7 @@ async def create_pay_to_address(context: Any) -> str | None:
         f"for ${amount_in_cents / 100:.2f} -> {pay_to_address}"
     )
 
+    valid_pay_to_addresses.add(pay_to_address.lower())
     return pay_to_address
 
 
