@@ -6,6 +6,7 @@ This repository demonstrates how to implement machine-to-machine payments using 
 
 - **Stripe account** with crypto payments enabled
 - **Wallet** with testnet USDC (Base Sepolia)
+- **Machine payments access**, reach out to [machine-payments@stripe.com](mailto:machine-payments@stripe.com)
 
 ## Getting Started
 
