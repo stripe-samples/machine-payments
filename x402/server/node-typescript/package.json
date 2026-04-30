@@ -17,7 +17,7 @@
     "hono": "^4.11.7",
     "node-cache": "^5.1.2",
     "stripe": "^22.0.1",
-    "viem": "^2.45.1"
+    "viem": "^2.48.4"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
