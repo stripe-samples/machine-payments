@@ -2,8 +2,8 @@ import crypto from "node:crypto";
 import { serve } from "@hono/node-server";
 import { config } from "dotenv";
 import { Hono } from "hono";
-import { Mppx, stripe as mppStripe, tempo } from "mppx/server";
-import Stripe from "stripe";
+import { Mppx, stripe } from "mppx/server";
+import StripeClient from "stripe";
 
 config();
 
@@ -17,6 +17,11 @@ if (!process.env.STRIPE_SECRET_KEY) {
   process.exit(1);
 }
 
+if (!process.env.STRIPE_PROFILE_ID) {
+  console.error("STRIPE_PROFILE_ID environment variable is required");
+  process.exit(1);
+}
+
 if (!process.env.DEPOSIT_ADDRESS) {
   console.error("DEPOSIT_ADDRESS environment variable is required");
   console.error(
@@ -25,13 +30,6 @@ if (!process.env.DEPOSIT_ADDRESS) {
   process.exit(1);
 }
 
-// USDC on Tempo (mainnet)
-const TEMPO_USDC = "0x20c000000000000000000000b9537d11c60e8b50";
-
-// Stripe deposit address created via:
-// stripe post /v1/crypto/deposit_addresses --live --stripe-version 2026-05-27.preview -d network=tempo
-const DEPOSIT_ADDRESS = process.env.DEPOSIT_ADDRESS as `0x${string}`;
-
 // Secret used to secure payment challenges
 // https://mpp.dev/protocol/challenges#challenge-binding
 const mppSecretKey = crypto
@@ -39,9 +37,7 @@ const mppSecretKey = crypto
   .update("mpp-challenge-signing")
   .digest("base64");
 
-const stripeClient = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  // @ts-expect-error preview API version required for crypto PaymentIntents
-  apiVersion: "2026-05-27.preview",
+const stripeClient = new StripeClient(process.env.STRIPE_SECRET_KEY!, {
   appInfo: {
     name: "stripe-samples/machine-payments",
     url: "https://github.com/stripe-samples/machine-payments",
@@ -51,66 +47,27 @@ const stripeClient = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 const app = new Hono();
 
-const mppx = Mppx.create({
-  methods: [
-    tempo.charge({
-      currency: TEMPO_USDC,
-      recipient: DEPOSIT_ADDRESS,
-      decimals: 2,
-    }),
-    mppStripe.charge({
-      client: stripeClient,
-      networkId: process.env.STRIPE_PROFILE_ID!,
-      paymentMethodTypes: ["card", "link"],
-      decimals: 2,
-    }),
-  ],
-  secretKey: mppSecretKey,
+const stripeMachinePayments = stripe.create({
+  client: stripeClient,
+  networkId: process.env.STRIPE_PROFILE_ID!,
+  livemode: !process.env.STRIPE_SECRET_KEY!.includes("_test_"),
+  // If omitted, mppx fetches an existing deposit address or creates a new one.
+  depositAddresses: { tempo: process.env.DEPOSIT_ADDRESS! },
 });
 
-// Record on-chain crypto payments as Stripe PaymentIntents using transaction_verification mode.
-const SUPPORTED_NETWORKS = ["tempo"];
-
-mppx.onPaymentSuccess(async ({ receipt, request }) => {
-  const txHash = receipt.reference;
-  if (!txHash || !SUPPORTED_NETWORKS.includes(receipt.method)) {
-    return;
-  }
-
-  const amountInCents = Math.round(Number(request.amount) * 100);
-  if (amountInCents < 1) {
-    return;
-  }
-
-  const pi = await stripeClient.paymentIntents.create(
-    {
-      amount: amountInCents,
-      currency: "usd",
-      confirm: true,
-      payment_method_data: { type: "crypto" },
-      payment_method_types: ["crypto"],
-      payment_method_options: {
-        crypto: {
-          mode: "transaction_verification",
-          transaction_verification_options: {
-            network: receipt.method,
-            transaction_hash: txHash,
-          },
-        },
-      },
-    } as Stripe.PaymentIntentCreateParams,
-    { idempotencyKey: txHash },
-  );
-
-  console.log(`Stripe PI ${pi.id}: ${amountInCents}¢ on ${receipt.method} for tx ${txHash}`);
+const mppx = Mppx.create({
+  // Returns Tempo and SPT methods today. Future mppx versions may include
+  // additional methods Stripe can configure automatically.
+  methods: stripeMachinePayments.defaultMethods(),
+  secretKey: mppSecretKey,
 });
 
 app.get("/paid", async (c) => {
   const request = c.req.raw;
 
-  const response = await Mppx.compose(
-    mppx.tempo.charge({ amount: "0.01", recipient: DEPOSIT_ADDRESS }),
-    mppx.stripe.charge({ amount: "0.50", currency: "usd" }),
+  const response = await mppx.compose(
+    ["tempo/charge", { amount: "0.01" }],
+    ["stripe/charge", { amount: "0.50" }],
   )(request);
 
   if (response.status === 402) return response.challenge;

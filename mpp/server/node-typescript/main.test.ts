@@ -36,22 +36,17 @@ vi.mock("mppx/server", () => {
     status: 200,
     withReceipt: (res: Response) => res,
   });
-  const methodCharge = vi.fn().mockReturnValue(chargeHandler);
   const mockInstance = {
-    tempo: { charge: methodCharge },
-    stripe: { charge: methodCharge },
-    onPaymentSuccess: vi.fn(),
+    compose: vi.fn().mockReturnValue(chargeHandler),
   };
   return {
     Mppx: {
       create: vi.fn().mockReturnValue(mockInstance),
-      compose: vi.fn().mockImplementation((...handlers: unknown[]) => handlers[0]),
     },
     stripe: {
-      charge: vi.fn().mockReturnValue({}),
-    },
-    tempo: {
-      charge: vi.fn().mockReturnValue({}),
+      create: vi.fn().mockReturnValue({
+        defaultMethods: vi.fn().mockReturnValue([]),
+      }),
     },
   };
 });

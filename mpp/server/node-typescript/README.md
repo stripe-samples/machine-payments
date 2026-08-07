@@ -1,6 +1,6 @@
 # MPP REST API - TypeScript
 
-This is the TypeScript implementation of the MPP REST API sample using Hono.
+This is the TypeScript implementation of the MPP REST API sample using Hono. It accepts Tempo and Stripe shared payment token (SPT) payments and automatically records successful payments as Stripe PaymentIntents.
 
 ## Requirements
 
@@ -16,6 +16,8 @@ This is the TypeScript implementation of the MPP REST API sample using Hono.
 ```bash
 stripe post /v1/crypto/deposit_addresses --live --stripe-version 2026-05-27.preview -d network=tempo
 ```
+
+The server passes this address to mppx during synchronous startup. If no address is provided to `stripe.create`, mppx can instead fetch an existing address or create one.
 
 2. Configure environment variables:
 ```bash
@@ -54,6 +56,8 @@ npx mppx@latest validate http://localhost:4242
 ## Test the sample
 
 ### With Link (card payments)
+
+Stripe requires a minimum charge of 0.50 USD (or equivalent) for card payments via SPT.
 
 ```bash
 npx @stripe/link-cli mpp pay http://localhost:4242/paid \
