@@ -2,6 +2,7 @@ import crypto from "node:crypto";
 import { serve } from "@hono/node-server";
 import { config } from "dotenv";
 import { Hono } from "hono";
+import { discovery } from "mppx/hono";
 import { Mppx, stripe } from "mppx/server";
 import StripeClient from "stripe";
 
@@ -62,17 +63,29 @@ const mppx = Mppx.create({
   secretKey: mppSecretKey,
 });
 
-app.get("/paid", async (c) => {
-  const request = c.req.raw;
+const paid = mppx.compose(
+  ["tempo/charge", { amount: "0.01" }],
+  ["stripe/charge", { amount: "0.50" }],
+);
 
-  const response = await mppx.compose(
-    ["tempo/charge", { amount: "0.01" }],
-    ["stripe/charge", { amount: "0.50" }],
-  )(request);
+app.get("/paid", async (c) => {
+  const response = await paid(c.req.raw);
 
   if (response.status === 402) return response.challenge;
 
   return response.withReceipt(Response.json({ foo: "bar" }));
+});
+
+discovery(app, mppx, {
+  info: { title: "MPP REST API", version: "1.0.0" },
+  routes: [
+    {
+      handler: paid,
+      method: "GET",
+      path: "/paid",
+      summary: "Returns paid content",
+    },
+  ],
 });
 
 serve({

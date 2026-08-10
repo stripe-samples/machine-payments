@@ -45,6 +45,13 @@ make run
 npx mppx@latest validate http://localhost:4242
 ```
 
+The server exposes an OpenAPI discovery document with payment metadata at
+`http://localhost:4242/openapi.json`:
+
+```bash
+curl http://localhost:4242/openapi.json
+```
+
 ## Development commands
 
 - `make lint` — run lint and formatting checks without changing files
