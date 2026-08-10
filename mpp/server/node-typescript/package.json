@@ -10,8 +10,8 @@
   "dependencies": {
     "@hono/node-server": "^2.0.0",
     "dotenv": "^17.4.2",
-    "hono": "^4.12.15",
-    "mppx": "https://pkg.pr.new/mppx@764",
+    "hono": "^4.13.1",
+    "mppx": "^0.8.17",
     "stripe": "^22.1.0",
     "viem": "^2.55.10"
   },
