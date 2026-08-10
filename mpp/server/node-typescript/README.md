@@ -68,6 +68,7 @@ Stripe requires a minimum charge of 0.50 USD (or equivalent) for card payments v
 
 ```bash
 npx @stripe/link-cli mpp pay http://localhost:4242/paid \
+  -X POST \
   --context "Testing the MPP machine payments integration sample server running locally on localhost:4242, verifying end-to-end payment flow with Stripe shared payment tokens"
 ```
 
@@ -77,5 +78,5 @@ npx @stripe/link-cli mpp pay http://localhost:4242/paid \
 curl -fsSL https://tempo.xyz/install | bash
 tempo wallet login
 tempo wallet fund
-tempo request http://localhost:4242/paid
+tempo request -X POST --json '{}' http://localhost:4242/paid
 ```

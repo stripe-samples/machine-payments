@@ -64,8 +64,8 @@ describe("mpp server", () => {
     expect(app.fetch).toBeInstanceOf(Function);
   });
 
-  it("GET /paid returns 402 or 200 depending on mppx charge flow", async () => {
-    const res = await app.request("/paid");
+  it("POST /paid returns 402 or 200 depending on mppx charge flow", async () => {
+    const res = await app.request("/paid", { method: "POST" });
     expect([200, 402]).toContain(res.status);
   });
 });

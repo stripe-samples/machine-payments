@@ -68,7 +68,7 @@ const paid = mppx.compose(
   ["stripe/charge", { amount: "0.50" }],
 );
 
-app.get("/paid", async (c) => {
+app.post("/paid", async (c) => {
   const response = await paid(c.req.raw);
 
   if (response.status === 402) return response.challenge;
@@ -81,7 +81,7 @@ discovery(app, mppx, {
   routes: [
     {
       handler: paid,
-      method: "GET",
+      method: "POST",
       path: "/paid",
       summary: "Returns paid content",
     },
