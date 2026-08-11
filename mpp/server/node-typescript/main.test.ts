@@ -3,7 +3,7 @@ import { beforeAll, describe, expect, it, vi } from "vitest";
 
 // Stub env vars before importing the app
 vi.stubEnv("STRIPE_SECRET_KEY", "sk_test_fake");
-vi.stubEnv("DEPOSIT_ADDRESS", "0xtest_deposit_address");
+vi.stubEnv("TEMPO_DEPOSIT_ADDRESS", "0xtest_deposit_address");
 vi.stubEnv("STRIPE_PROFILE_ID", "profile_test_123");
 
 // Mock @hono/node-server so `serve()` is a no-op
@@ -36,22 +36,17 @@ vi.mock("mppx/server", () => {
     status: 200,
     withReceipt: (res: Response) => res,
   });
-  const methodCharge = vi.fn().mockReturnValue(chargeHandler);
   const mockInstance = {
-    tempo: { charge: methodCharge },
-    stripe: { charge: methodCharge },
-    onPaymentSuccess: vi.fn(),
+    compose: vi.fn().mockReturnValue(chargeHandler),
   };
   return {
     Mppx: {
       create: vi.fn().mockReturnValue(mockInstance),
-      compose: vi.fn().mockImplementation((...handlers: unknown[]) => handlers[0]),
     },
     stripe: {
-      charge: vi.fn().mockReturnValue({}),
-    },
-    tempo: {
-      charge: vi.fn().mockReturnValue({}),
+      create: vi.fn().mockReturnValue({
+        defaultMethods: vi.fn().mockReturnValue([]),
+      }),
     },
   };
 });
@@ -69,8 +64,8 @@ describe("mpp server", () => {
     expect(app.fetch).toBeInstanceOf(Function);
   });
 
-  it("GET /paid returns 402 or 200 depending on mppx charge flow", async () => {
-    const res = await app.request("/paid");
+  it("POST /paid returns 402 or 200 depending on mppx charge flow", async () => {
+    const res = await app.request("/paid", { method: "POST" });
     expect([200, 402]).toContain(res.status);
   });
 });

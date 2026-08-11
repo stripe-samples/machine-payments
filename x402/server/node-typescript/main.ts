@@ -19,8 +19,8 @@ if (!process.env.STRIPE_SECRET_KEY) {
   process.exit(1);
 }
 
-if (!process.env.DEPOSIT_ADDRESS) {
-  console.error("DEPOSIT_ADDRESS environment variable is required");
+if (!process.env.TEMPO_DEPOSIT_ADDRESS) {
+  console.error("TEMPO_DEPOSIT_ADDRESS environment variable is required");
   console.error(
     "Create one with: stripe post /v1/crypto/deposit_addresses --live --stripe-version 2026-05-27.preview -d network=base",
   );
@@ -30,7 +30,7 @@ if (!process.env.DEPOSIT_ADDRESS) {
 // Stripe deposit address created via:
 // stripe post /v1/crypto/deposit_addresses --live \
 //   --stripe-version 2026-05-27.preview -d network=base
-const DEPOSIT_ADDRESS = process.env.DEPOSIT_ADDRESS.toLowerCase();
+const TEMPO_DEPOSIT_ADDRESS = process.env.TEMPO_DEPOSIT_ADDRESS.toLowerCase();
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
   // @ts-expect-error preview API version required for crypto PaymentIntents
@@ -102,7 +102,7 @@ app.use(
             scheme: "exact",
             price: "$0.01",
             network: "eip155:8453",
-            payTo: DEPOSIT_ADDRESS,
+            payTo: TEMPO_DEPOSIT_ADDRESS,
           },
         ],
         description: "Data retrieval endpoint",

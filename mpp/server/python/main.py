@@ -26,10 +26,10 @@ STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
 if not STRIPE_SECRET_KEY:
     raise ValueError("STRIPE_SECRET_KEY environment variable is required")
 
-DEPOSIT_ADDRESS = os.getenv("DEPOSIT_ADDRESS")
-if not DEPOSIT_ADDRESS:
+TEMPO_DEPOSIT_ADDRESS = os.getenv("TEMPO_DEPOSIT_ADDRESS")
+if not TEMPO_DEPOSIT_ADDRESS:
     raise ValueError(
-        "DEPOSIT_ADDRESS environment variable is required.\n"
+        "TEMPO_DEPOSIT_ADDRESS environment variable is required.\n"
         "Create one with: stripe post /v1/crypto/deposit_addresses "
         "--live --stripe-version 2026-05-27.preview -d network=tempo"
     )
@@ -59,7 +59,7 @@ server = Mpp.create(
     method=tempo(
         intents={"charge": ChargeIntent()},
         currency=TEMPO_USDC,
-        recipient=DEPOSIT_ADDRESS,
+        recipient=TEMPO_DEPOSIT_ADDRESS,
         decimals=2,
     ),
     secret_key=mpp_secret_key,
