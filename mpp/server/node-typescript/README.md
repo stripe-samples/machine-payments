@@ -24,7 +24,7 @@ The server passes this address to mppx during synchronous startup. If no address
 cp ../../../.env.template .env
 # Edit .env with your credentials:
 # - STRIPE_SECRET_KEY
-# - DEPOSIT_ADDRESS (from step 1)
+# - TEMPO_DEPOSIT_ADDRESS (from step 1)
 # - STRIPE_PROFILE_ID (from your Stripe profile)
 ```
 

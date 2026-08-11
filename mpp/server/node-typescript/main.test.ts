@@ -3,7 +3,7 @@ import { beforeAll, describe, expect, it, vi } from "vitest";
 
 // Stub env vars before importing the app
 vi.stubEnv("STRIPE_SECRET_KEY", "sk_test_fake");
-vi.stubEnv("DEPOSIT_ADDRESS", "0xtest_deposit_address");
+vi.stubEnv("TEMPO_DEPOSIT_ADDRESS", "0xtest_deposit_address");
 vi.stubEnv("STRIPE_PROFILE_ID", "profile_test_123");
 
 // Mock @hono/node-server so `serve()` is a no-op

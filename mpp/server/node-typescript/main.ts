@@ -23,8 +23,9 @@ if (!process.env.STRIPE_PROFILE_ID) {
   process.exit(1);
 }
 
-if (!process.env.DEPOSIT_ADDRESS) {
-  console.error("DEPOSIT_ADDRESS environment variable is required");
+const tempoDepositAddress = process.env.TEMPO_DEPOSIT_ADDRESS;
+if (!tempoDepositAddress) {
+  console.error("TEMPO_DEPOSIT_ADDRESS environment variable is required");
   console.error(
     "Create one with: stripe post /v1/crypto/deposit_addresses --live --stripe-version 2026-05-27.preview -d network=tempo",
   );
@@ -53,7 +54,7 @@ const stripeMachinePayments = stripe.create({
   networkId: process.env.STRIPE_PROFILE_ID!,
   livemode: !process.env.STRIPE_SECRET_KEY!.includes("_test_"),
   // If omitted, mppx fetches an existing deposit address or creates a new one.
-  depositAddresses: { tempo: process.env.DEPOSIT_ADDRESS! },
+  depositAddresses: { tempo: tempoDepositAddress },
 });
 
 const mppx = Mppx.create({

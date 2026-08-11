@@ -6,7 +6,7 @@ from httpx import ASGITransport, AsyncClient
 @pytest.fixture(autouse=True)
 def _set_env(monkeypatch):
     monkeypatch.setenv("STRIPE_SECRET_KEY", "sk_test_fake")
-    monkeypatch.setenv("DEPOSIT_ADDRESS", "0xtest_deposit_address")
+    monkeypatch.setenv("TEMPO_DEPOSIT_ADDRESS", "0xtest_deposit_address")
 
 
 def test_app_is_fastapi():

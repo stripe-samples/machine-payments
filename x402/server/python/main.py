@@ -26,9 +26,9 @@ if not STRIPE_SECRET_KEY:
     print("STRIPE_SECRET_KEY environment variable is required", file=sys.stderr)
     raise SystemExit(1)
 
-DEPOSIT_ADDRESS = os.getenv("DEPOSIT_ADDRESS")
-if not DEPOSIT_ADDRESS:
-    print("DEPOSIT_ADDRESS environment variable is required", file=sys.stderr)
+TEMPO_DEPOSIT_ADDRESS = os.getenv("TEMPO_DEPOSIT_ADDRESS")
+if not TEMPO_DEPOSIT_ADDRESS:
+    print("TEMPO_DEPOSIT_ADDRESS environment variable is required", file=sys.stderr)
     print(
         "Create one with: stripe post /v1/crypto/deposit_addresses"
         " --live --stripe-version 2026-05-27.preview -d network=base",
@@ -48,7 +48,7 @@ if not CDP_API_KEY_ID or not CDP_API_KEY_SECRET:
 # Stripe deposit address created via the Stripe CLI:
 # stripe post /v1/crypto/deposit_addresses --live \
 #   --stripe-version 2026-05-27.preview -d network=base
-DEPOSIT_ADDRESS = DEPOSIT_ADDRESS.lower()
+TEMPO_DEPOSIT_ADDRESS = TEMPO_DEPOSIT_ADDRESS.lower()
 
 stripe.api_key = STRIPE_SECRET_KEY
 stripe.api_version = "2026-05-27.preview"  # type: ignore[assignment]
@@ -167,7 +167,7 @@ routes = {
                 scheme="exact",
                 price="$0.01",
                 network="eip155:8453",
-                pay_to=DEPOSIT_ADDRESS,
+                pay_to=TEMPO_DEPOSIT_ADDRESS,
             )
         ],
         description="Data retrieval endpoint",
