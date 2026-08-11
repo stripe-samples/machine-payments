@@ -78,5 +78,5 @@ npx @stripe/link-cli mpp pay http://localhost:4242/paid \
 curl -fsSL https://tempo.xyz/install | bash
 tempo wallet login
 tempo wallet fund
-tempo request -X POST --json '{}' http://localhost:4242/paid
+tempo request -X POST http://localhost:4242/paid
 ```
