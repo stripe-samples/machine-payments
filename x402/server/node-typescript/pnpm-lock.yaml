@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@coinbase/x402':
         specifier: ^2.1.0
-        version: 2.1.0(@x402/evm@2.21.0(typescript@6.0.3))(@x402/extensions@2.21.0(typescript@6.0.3))(typescript@6.0.3)
+        version: 2.1.0(@x402/evm@2.21.0(typescript@6.0.3))(@x402/extensions@2.22.0(typescript@6.0.3))(typescript@6.0.3)
       '@hono/node-server':
         specifier: ^1.19.10
         version: 1.19.17(hono@4.13.0)
@@ -24,8 +24,8 @@ importers:
         specifier: ^2.11.0
         version: 2.21.0
       '@x402/hono':
-        specifier: ^2.11.0
-        version: 2.21.0(hono@4.13.0)(typescript@6.0.3)
+        specifier: ^2.22.0
+        version: 2.22.0(hono@4.13.0)(typescript@6.0.3)
       dotenv:
         specifier: ^17.4.1
         version: 17.4.2
@@ -1057,19 +1057,22 @@ packages:
   '@x402/core@2.21.0':
     resolution: {integrity: sha512-0djKE7V5/JKDMrjRe5he3DoMFzlbVnUcvMmLAb2j6OoAJDamupkFh6fFrXeoHwjkBIxOFUzjGI4FVixz2dMxSA==}
 
+  '@x402/core@2.22.0':
+    resolution: {integrity: sha512-hYySs/PvukqRipC2mKqrsn/jx2U/p5EGnN3clQ2CIcApwtoFuG77CqpC3Wy7Fdp/juW8t8quiPVnqGuIkfix1Q==}
+
   '@x402/evm@2.21.0':
     resolution: {integrity: sha512-VZtPz26IxhfAQbHHmyG7nCY/0jLH9QIgNqRztT1ae93dc9uSGUyn5bofzA3Wxq7lND3WDFir0QAQ2LBqoFeMrg==}
 
-  '@x402/extensions@2.21.0':
-    resolution: {integrity: sha512-0cZTRVtnWUUsp9KxBvbMERtLKo+57Ru1IhbAHtpgNdK08/LJWtK6CpqM4wgta8nMPth3jMvB/PdS3OdNaEPaBQ==}
+  '@x402/extensions@2.22.0':
+    resolution: {integrity: sha512-E5Ma1Fs1GwO/ET7KtGUI7dPuVFoINR+mwTWVoGdNi3DsJBJKDWSA7Ta7bDgSANzV3XCAMK9gvz/VSItZliApMA==}
 
   '@x402/fetch@2.21.0':
     resolution: {integrity: sha512-LEiJ8jjb8fmCNgF1yMjLoVRtrg8gtb/zJgBDLW7t/KPbntDDqgru+nd1OLU1qyyp9D2I7ULYP420eHVyAVZ12w==}
 
-  '@x402/hono@2.21.0':
-    resolution: {integrity: sha512-5OjD+jh0p0W4TvTmcwxYkRKfwgzldLE9PomOnVls6Gq6fsYYdajHuDxd8ZQXb8m9S/3JwOYK3Ay8v2hLv/Mv4A==}
+  '@x402/hono@2.22.0':
+    resolution: {integrity: sha512-ztfv8Ke2L25uR/ww32RWgE3okfkTuRFeafVOHiXC0r3rMc+rtEfOexc1aqagjivy6CaiUli1WNoCCVRPkU87xg==}
     peerDependencies:
-      '@x402/paywall': ^2.21.0
+      '@x402/paywall': ^2.22.0
       hono: ^4.0.0
     peerDependenciesMeta:
       '@x402/paywall':
@@ -1567,7 +1570,7 @@ snapshots:
   '@biomejs/cli-win32-x64@2.5.7':
     optional: true
 
-  '@coinbase/cdp-sdk@1.55.0(@x402/core@2.21.0)(@x402/evm@2.21.0(typescript@6.0.3))(@x402/extensions@2.21.0(typescript@6.0.3))(typescript@6.0.3)':
+  '@coinbase/cdp-sdk@1.55.0(@x402/core@2.21.0)(@x402/evm@2.21.0(typescript@6.0.3))(@x402/extensions@2.22.0(typescript@6.0.3))(typescript@6.0.3)':
     dependencies:
       '@solana-program/system': 0.10.0(@solana/kit@5.5.1(typescript@6.0.3))
       '@solana-program/token': 0.9.0(@solana/kit@5.5.1(typescript@6.0.3))
@@ -1584,7 +1587,7 @@ snapshots:
     optionalDependencies:
       '@x402/core': 2.21.0
       '@x402/evm': 2.21.0(typescript@6.0.3)
-      '@x402/extensions': 2.21.0(typescript@6.0.3)
+      '@x402/extensions': 2.22.0(typescript@6.0.3)
     transitivePeerDependencies:
       - bufferutil
       - debug
@@ -1592,9 +1595,9 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@coinbase/x402@2.1.0(@x402/evm@2.21.0(typescript@6.0.3))(@x402/extensions@2.21.0(typescript@6.0.3))(typescript@6.0.3)':
+  '@coinbase/x402@2.1.0(@x402/evm@2.21.0(typescript@6.0.3))(@x402/extensions@2.22.0(typescript@6.0.3))(typescript@6.0.3)':
     dependencies:
-      '@coinbase/cdp-sdk': 1.55.0(@x402/core@2.21.0)(@x402/evm@2.21.0(typescript@6.0.3))(@x402/extensions@2.21.0(typescript@6.0.3))(typescript@6.0.3)
+      '@coinbase/cdp-sdk': 1.55.0(@x402/core@2.21.0)(@x402/evm@2.21.0(typescript@6.0.3))(@x402/extensions@2.22.0(typescript@6.0.3))(typescript@6.0.3)
       '@x402/core': 2.21.0
       viem: 2.55.10(typescript@6.0.3)(zod@3.25.76)
       zod: 3.25.76
@@ -1864,7 +1867,7 @@ snapshots:
 
   '@scure/bip32@1.7.0':
     dependencies:
-      '@noble/curves': 1.9.7
+      '@noble/curves': 1.9.1
       '@noble/hashes': 1.8.0
       '@scure/base': 1.2.6
 
@@ -2378,6 +2381,10 @@ snapshots:
     dependencies:
       zod: 3.25.76
 
+  '@x402/core@2.22.0':
+    dependencies:
+      zod: 3.25.76
+
   '@x402/evm@2.21.0(typescript@6.0.3)':
     dependencies:
       '@x402/core': 2.21.0
@@ -2388,12 +2395,12 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@x402/extensions@2.21.0(typescript@6.0.3)':
+  '@x402/extensions@2.22.0(typescript@6.0.3)':
     dependencies:
       '@noble/curves': 1.9.7
       '@scure/base': 1.2.6
       '@signinwithethereum/siwe': 4.2.0(viem@2.55.10(typescript@6.0.3)(zod@3.25.76))
-      '@x402/core': 2.21.0
+      '@x402/core': 2.22.0
       ajv: 8.20.0
       jose: 5.10.0
       tweetnacl: 1.0.3
@@ -2409,10 +2416,10 @@ snapshots:
     dependencies:
       '@x402/core': 2.21.0
 
-  '@x402/hono@2.21.0(hono@4.13.0)(typescript@6.0.3)':
+  '@x402/hono@2.22.0(hono@4.13.0)(typescript@6.0.3)':
     dependencies:
-      '@x402/core': 2.21.0
-      '@x402/extensions': 2.21.0(typescript@6.0.3)
+      '@x402/core': 2.22.0
+      '@x402/extensions': 2.22.0(typescript@6.0.3)
       hono: 4.13.0
     transitivePeerDependencies:
       - bufferutil
