@@ -12,8 +12,8 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0(@x402/evm@2.22.0(typescript@6.0.3))(@x402/extensions@2.21.0(typescript@6.0.3))(typescript@6.0.3)
       '@hono/node-server':
-        specifier: ^1.19.10
-        version: 1.19.17(hono@4.13.0)
+        specifier: ^2.1.1
+        version: 2.1.1(hono@4.13.0)
       '@x402/core':
         specifier: ^2.11.0
         version: 2.21.0
@@ -449,9 +449,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@hono/node-server@1.19.17':
-    resolution: {integrity: sha512-dSneS5qhiauZWGDCeK4o695Xd9nUNjviSZCMQrj10eetr8Uln1ucn6bbphOM6UynAMMtNIzZNSpL9vnASJwrPQ==}
-    engines: {node: '>=18.14.1'}
+  '@hono/node-server@2.1.1':
+    resolution: {integrity: sha512-ELuehkj5VCBdgEw9zs+ivkKwyzzUCSQuE96YmiPvn1ECBoZCczbFXJLeEGMTYjphP6gydh4pHMqEYPVMYUVgQg==}
+    engines: {node: '>=20'}
     peerDependencies:
       hono: ^4
 
@@ -1767,7 +1767,7 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
-  '@hono/node-server@1.19.17(hono@4.13.0)':
+  '@hono/node-server@2.1.1(hono@4.13.0)':
     dependencies:
       hono: 4.13.0
 
