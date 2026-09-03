@@ -13,7 +13,7 @@
     "hono": "^4.13.1",
     "mppx": "^0.8.19",
     "stripe": "^22.5.0",
-    "viem": "^2.55.10"
+    "viem": "^2.56.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
