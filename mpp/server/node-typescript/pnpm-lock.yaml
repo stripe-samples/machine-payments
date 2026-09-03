@@ -18,14 +18,14 @@ importers:
         specifier: ^4.13.1
         version: 4.13.2
       mppx:
-        specifier: ^0.8.19
-        version: 0.8.19(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.4.3))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.55.10(typescript@7.0.2)(zod@4.4.3))
+        specifier: ^0.9.1
+        version: 0.9.1(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.5.4))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.55.10(typescript@7.0.2)(zod@4.5.4))
       stripe:
         specifier: ^22.5.0
         version: 22.5.0(@types/node@26.2.0)
       viem:
         specifier: ^2.55.10
-        version: 2.55.10(typescript@7.0.2)(zod@4.4.3)
+        version: 2.55.10(typescript@7.0.2)(zod@4.5.4)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.5.7
@@ -793,8 +793,8 @@ packages:
       zod:
         optional: true
 
-  abitype@1.2.4:
-    resolution: {integrity: sha512-dpKH+N27vRjarMVTFFkeY445VTKftzGWpL0FiT7xmVmzQRKazZexzC5uHG0f6XKsVLAuUlndnbGau6lRejClxg==}
+  abitype@1.3.0:
+    resolution: {integrity: sha512-fk6Te+bojIFrMvMZrnOO+SxCB+RUksTGOzq/60ZRvs1L+BVzvi2bqt9L3W/17ZLdZsyM1FuYf65P5nlmoiH1Bg==}
     peerDependencies:
       typescript: '>=5.0.4'
       zod: ^3.22.0 || ^4.0.0
@@ -1083,23 +1083,41 @@ packages:
     resolution: {integrity: sha512-Lbgzdk0h4juoQ9fCKXW4by0UJqj+nOOrI9MJ1sSj4nI8aI2eo1qmvQEie4VD1glsS250n15LsWsYtCugiStS5A==}
     engines: {node: '>=18'}
 
-  mppx@0.8.19:
-    resolution: {integrity: sha512-Rt4aq67bfeOGjK3/jt0oVPZGwULg8fb8yUlTjjb+tfMltjRXuUE7JfQ2AutmI6bhZG3TtXJmI4BK2AxxjC0Ntw==}
+  mppx@0.9.1:
+    resolution: {integrity: sha512-mmzOHcUnyvxXBFJQWWFeaT6+uwRuphqmzFZXfJjDKlmEQ559oEseQusaXs68husPKSYZU9WCwRElhi55+5I+5A==}
     hasBin: true
     peerDependencies:
       '@modelcontextprotocol/sdk': '>=1.25.0'
+      '@x402/core': '>=2.22.0'
+      '@x402/express': '>=2.22.0'
+      '@x402/hono': '>=2.22.0'
+      '@x402/mcp': '>=2.22.0'
+      '@x402/next': '>=2.22.0'
       elysia: '>=1'
       express: '>=5'
       hono: '>=4.12.25'
+      next: '>=16.2.6'
       viem: '>=2.54.0'
     peerDependenciesMeta:
       '@modelcontextprotocol/sdk':
+        optional: true
+      '@x402/core':
+        optional: true
+      '@x402/express':
+        optional: true
+      '@x402/hono':
+        optional: true
+      '@x402/mcp':
+        optional: true
+      '@x402/next':
         optional: true
       elysia:
         optional: true
       express:
         optional: true
       hono:
+        optional: true
+      next:
         optional: true
 
   ms@2.1.3:
@@ -1442,8 +1460,8 @@ packages:
     peerDependencies:
       zod: ^3.25.28 || ^4
 
-  zod@4.4.3:
-    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
+  zod@4.5.4:
+    resolution: {integrity: sha512-sC95tT5iHHH9gtpj6A81kh+NEaRAUFN+qlUPDUbRfOMvNf5QCBqsb3WgvnpVtK5Y+4UfA6KqufotuTvMGiTlsA==}
 
 snapshots:
 
@@ -1654,7 +1672,7 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
 
-  '@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.4.3)':
+  '@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.5.4)':
     dependencies:
       '@hono/node-server': 1.19.17(hono@4.13.2)
       ajv: 8.20.0
@@ -1671,8 +1689,8 @@ snapshots:
       json-schema-typed: 8.0.2
       pkce-challenge: 5.0.1
       raw-body: 3.0.2
-      zod: 4.4.3
-      zod-to-json-schema: 3.25.2(zod@4.4.3)
+      zod: 4.5.4
+      zod-to-json-schema: 3.25.2(zod@4.5.4)
     optionalDependencies:
       '@cfworker/json-schema': 4.1.1
     transitivePeerDependencies:
@@ -1898,15 +1916,15 @@ snapshots:
       convert-source-map: 2.0.0
       tinyrainbow: 3.1.0
 
-  abitype@1.2.3(typescript@7.0.2)(zod@4.4.3):
+  abitype@1.2.3(typescript@7.0.2)(zod@4.5.4):
     optionalDependencies:
       typescript: 7.0.2
-      zod: 4.4.3
+      zod: 4.5.4
 
-  abitype@1.2.4(typescript@7.0.2)(zod@4.4.3):
+  abitype@1.3.0(typescript@7.0.2)(zod@4.5.4):
     optionalDependencies:
       typescript: 7.0.2
-      zod: 4.4.3
+      zod: 4.5.4
 
   accepts@2.0.0:
     dependencies:
@@ -2283,16 +2301,16 @@ snapshots:
       mime-db: 1.54.0
     optional: true
 
-  mppx@0.8.19(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.4.3))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.55.10(typescript@7.0.2)(zod@4.4.3)):
+  mppx@0.9.1(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.5.4))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.55.10(typescript@7.0.2)(zod@4.5.4)):
     dependencies:
       '@stripe/stripe-js': 9.13.0
       eventsource-parser: 3.1.1
-      ox: 0.14.33(typescript@7.0.2)(zod@4.4.3)
+      ox: 0.14.33(typescript@7.0.2)(zod@4.5.4)
       structured-headers: 2.0.3
-      viem: 2.55.10(typescript@7.0.2)(zod@4.4.3)
-      zod: 4.4.3
+      viem: 2.55.10(typescript@7.0.2)(zod@4.5.4)
+      zod: 4.5.4
     optionalDependencies:
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.4.3)
+      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.5.4)
       express: 5.2.1
       hono: 4.13.2
     transitivePeerDependencies:
@@ -2324,7 +2342,7 @@ snapshots:
       wrappy: 1.0.2
     optional: true
 
-  ox@0.14.33(typescript@7.0.2)(zod@4.4.3):
+  ox@0.14.33(typescript@7.0.2)(zod@4.5.4):
     dependencies:
       '@adraffy/ens-normalize': 1.11.1
       '@noble/ciphers': 1.3.0
@@ -2332,7 +2350,7 @@ snapshots:
       '@noble/hashes': 1.8.0
       '@scure/bip32': 1.7.0
       '@scure/bip39': 1.6.0
-      abitype: 1.2.4(typescript@7.0.2)(zod@4.4.3)
+      abitype: 1.3.0(typescript@7.0.2)(zod@4.5.4)
       eventemitter3: 5.0.1
     optionalDependencies:
       typescript: 7.0.2
@@ -2587,15 +2605,15 @@ snapshots:
   vary@1.1.2:
     optional: true
 
-  viem@2.55.10(typescript@7.0.2)(zod@4.4.3):
+  viem@2.55.10(typescript@7.0.2)(zod@4.5.4):
     dependencies:
       '@noble/curves': 1.9.1
       '@noble/hashes': 1.8.0
       '@scure/bip32': 1.7.0
       '@scure/bip39': 1.6.0
-      abitype: 1.2.3(typescript@7.0.2)(zod@4.4.3)
+      abitype: 1.2.3(typescript@7.0.2)(zod@4.5.4)
       isows: 1.0.7(ws@8.21.0)
-      ox: 0.14.33(typescript@7.0.2)(zod@4.4.3)
+      ox: 0.14.33(typescript@7.0.2)(zod@4.5.4)
       ws: 8.21.0
     optionalDependencies:
       typescript: 7.0.2
@@ -2663,9 +2681,9 @@ snapshots:
   yaml@2.8.3:
     optional: true
 
-  zod-to-json-schema@3.25.2(zod@4.4.3):
+  zod-to-json-schema@3.25.2(zod@4.5.4):
     dependencies:
-      zod: 4.4.3
+      zod: 4.5.4
     optional: true
 
-  zod@4.4.3: {}
+  zod@4.5.4: {}
