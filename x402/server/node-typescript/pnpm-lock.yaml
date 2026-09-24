@@ -15,8 +15,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1(hono@4.13.0)
       '@x402/core':
-        specifier: ^2.11.0
-        version: 2.21.0
+        specifier: ^2.26.0
+        version: 2.26.0
       '@x402/evm':
         specifier: ^2.22.0
         version: 2.22.0(typescript@6.0.3)
@@ -1063,6 +1063,9 @@ packages:
   '@x402/core@2.23.0':
     resolution: {integrity: sha512-EFeV0nXbTPPe5FXaD6y9vMgqc+k/ujLXCrUPrQXkmHjHyjC3Ir5tTL1e2FPSkx2+GUGzfpt1wVZb36639ygkWw==}
 
+  '@x402/core@2.26.0':
+    resolution: {integrity: sha512-8dlXip9u0JjyELzzFz48vntuMajvUjA8IYpitfaW423m53bR49amZDIn3n4gXRYoNEKzGB9Rtn8at35WHz61cA==}
+
   '@x402/evm@2.22.0':
     resolution: {integrity: sha512-WzZVGVx6B2cvCAEHDCuNWfQkcwIZsOVdGcJKILmG/ySzLpBZ1/ARU2kU/8K3ekxhygAKrkarltVVznSEoO5vdQ==}
 
@@ -1573,7 +1576,7 @@ snapshots:
   '@biomejs/cli-win32-x64@2.5.7':
     optional: true
 
-  '@coinbase/cdp-sdk@1.55.0(@x402/core@2.21.0)(@x402/evm@2.22.0(typescript@6.0.3))(@x402/extensions@2.23.0(typescript@6.0.3))(typescript@6.0.3)':
+  '@coinbase/cdp-sdk@1.55.0(@x402/core@2.26.0)(@x402/evm@2.22.0(typescript@6.0.3))(@x402/extensions@2.23.0(typescript@6.0.3))(typescript@6.0.3)':
     dependencies:
       '@solana-program/system': 0.10.0(@solana/kit@5.5.1(typescript@6.0.3))
       '@solana-program/token': 0.9.0(@solana/kit@5.5.1(typescript@6.0.3))
@@ -1588,7 +1591,7 @@ snapshots:
       viem: 2.55.10(typescript@6.0.3)(zod@3.25.76)
       zod: 3.25.76
     optionalDependencies:
-      '@x402/core': 2.21.0
+      '@x402/core': 2.26.0
       '@x402/evm': 2.22.0(typescript@6.0.3)
       '@x402/extensions': 2.23.0(typescript@6.0.3)
     transitivePeerDependencies:
@@ -1600,8 +1603,8 @@ snapshots:
 
   '@coinbase/x402@2.1.0(@x402/evm@2.22.0(typescript@6.0.3))(@x402/extensions@2.23.0(typescript@6.0.3))(typescript@6.0.3)':
     dependencies:
-      '@coinbase/cdp-sdk': 1.55.0(@x402/core@2.21.0)(@x402/evm@2.22.0(typescript@6.0.3))(@x402/extensions@2.23.0(typescript@6.0.3))(typescript@6.0.3)
-      '@x402/core': 2.21.0
+      '@coinbase/cdp-sdk': 1.55.0(@x402/core@2.26.0)(@x402/evm@2.22.0(typescript@6.0.3))(@x402/extensions@2.23.0(typescript@6.0.3))(typescript@6.0.3)
+      '@x402/core': 2.26.0
       viem: 2.55.10(typescript@6.0.3)(zod@3.25.76)
       zod: 3.25.76
     transitivePeerDependencies:
@@ -2389,6 +2392,10 @@ snapshots:
       zod: 3.25.76
 
   '@x402/core@2.23.0':
+    dependencies:
+      zod: 3.25.76
+
+  '@x402/core@2.26.0':
     dependencies:
       zod: 3.25.76
 
