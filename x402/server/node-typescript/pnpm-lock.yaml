@@ -27,8 +27,8 @@ importers:
         specifier: ^2.23.0
         version: 2.23.0(hono@4.13.0)(typescript@7.0.2)
       dotenv:
-        specifier: ^17.4.1
-        version: 17.4.2
+        specifier: ^18.0.4
+        version: 18.0.5
       hono:
         specifier: ^4.11.7
         version: 4.13.0
@@ -1269,9 +1269,10 @@ packages:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
 
-  dotenv@17.4.2:
-    resolution: {integrity: sha512-nI4U3TottKAcAD9LLud4Cb7b2QztQMUEfHbvhTH09bqXTxnSie8WnjPALV/WMCrJZ6UV/qHJ6L03OqO3LcdYZw==}
+  dotenv@18.0.5:
+    resolution: {integrity: sha512-aBrGvt6KhjxbEnatqMWOMidftwsrCiCvqh1yNIGB9QyF0J+VcWkKDMsvYOEm7ZS82oiV+BT1sTOtIlAmUlTpwQ==}
     engines: {node: '>=12'}
+    hasBin: true
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -2619,7 +2620,7 @@ snapshots:
 
   delayed-stream@1.0.0: {}
 
-  dotenv@17.4.2: {}
+  dotenv@18.0.5: {}
 
   dunder-proto@1.0.1:
     dependencies:
