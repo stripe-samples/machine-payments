@@ -18,8 +18,8 @@ importers:
         specifier: ^4.13.1
         version: 4.13.2
       mppx:
-        specifier: ^0.9.2
-        version: 0.9.2(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.1))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.56.9(typescript@7.0.2)(zod@4.6.1))
+        specifier: ^0.11.0
+        version: 0.11.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.1))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.56.9(typescript@7.0.2)(zod@4.6.1))
       stripe:
         specifier: ^22.6.2
         version: 22.6.2(@types/node@26.6.3)
@@ -1070,8 +1070,8 @@ packages:
     resolution: {integrity: sha512-Lbgzdk0h4juoQ9fCKXW4by0UJqj+nOOrI9MJ1sSj4nI8aI2eo1qmvQEie4VD1glsS250n15LsWsYtCugiStS5A==}
     engines: {node: '>=18'}
 
-  mppx@0.9.2:
-    resolution: {integrity: sha512-zKXIdKlFM6k9BS4Rt/f2CSKAbJr5a9DsITvSGtP9zDqjhdbCTzp377SuLNllaGX3yEGIh/vqD00hBacxZV0MEQ==}
+  mppx@0.11.0:
+    resolution: {integrity: sha512-4cgsF8EAqj21oT8UDEj90xHHpi529INi4KjriirxAJEpBNs6U3Zcj7QVGME/coBQBT9cyK95omC3yVYhrlBPYA==}
     hasBin: true
     peerDependencies:
       '@modelcontextprotocol/sdk': '>=1.25.0'
@@ -2252,7 +2252,7 @@ snapshots:
       mime-db: 1.54.0
     optional: true
 
-  mppx@0.9.2(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.1))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.56.9(typescript@7.0.2)(zod@4.6.1)):
+  mppx@0.11.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.1))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.56.9(typescript@7.0.2)(zod@4.6.1)):
     dependencies:
       '@stripe/stripe-js': 9.13.0
       eventsource-parser: 3.1.1
