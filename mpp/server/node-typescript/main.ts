@@ -28,7 +28,7 @@ const tempoDepositAddress = process.env.TEMPO_DEPOSIT_ADDRESS;
 if (!tempoDepositAddress) {
   console.error("TEMPO_DEPOSIT_ADDRESS environment variable is required");
   console.error(
-    "Create one with: stripe post /v1/crypto/deposit_addresses --live --stripe-version 2026-05-27.preview -d network=tempo",
+    "Create one with: stripe post /v1/crypto/deposit_addresses --live --stripe-version 2026-10-28.preview -d network=tempo",
   );
   process.exit(1);
 }

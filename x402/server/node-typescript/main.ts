@@ -22,19 +22,19 @@ if (!process.env.STRIPE_SECRET_KEY) {
 if (!process.env.TEMPO_DEPOSIT_ADDRESS) {
   console.error("TEMPO_DEPOSIT_ADDRESS environment variable is required");
   console.error(
-    "Create one with: stripe post /v1/crypto/deposit_addresses --live --stripe-version 2026-05-27.preview -d network=base",
+    "Create one with: stripe post /v1/crypto/deposit_addresses --live --stripe-version 2026-10-28.preview -d network=base",
   );
   process.exit(1);
 }
 
 // Stripe deposit address created via:
 // stripe post /v1/crypto/deposit_addresses --live \
-//   --stripe-version 2026-05-27.preview -d network=base
+//   --stripe-version 2026-10-28.preview -d network=base
 const TEMPO_DEPOSIT_ADDRESS = process.env.TEMPO_DEPOSIT_ADDRESS.toLowerCase();
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
   // @ts-expect-error preview API version required for crypto PaymentIntents
-  apiVersion: "2026-05-27.preview",
+  apiVersion: "2026-10-28.preview",
   appInfo: {
     name: "stripe-samples/machine-payments",
     url: "https://github.com/stripe-samples/machine-payments",
@@ -74,7 +74,7 @@ resourceServer.onAfterSettle(async ({ result, requirements }) => {
       currency: "usd",
       confirm: true,
       payment_method_data: { type: "crypto" },
-      payment_method_types: ["crypto"],
+      allowed_payment_method_types: ["crypto"],
       payment_method_options: {
         crypto: {
           mode: "transaction_verification",
@@ -82,9 +82,9 @@ resourceServer.onAfterSettle(async ({ result, requirements }) => {
             network: "base",
             transaction_hash: txHash,
           },
-        },
+        } as Stripe.PaymentIntentCreateParams.PaymentMethodOptions.Crypto,
       },
-    } as Stripe.PaymentIntentCreateParams,
+    },
     { idempotencyKey: txHash },
   );
 

@@ -12,6 +12,13 @@ This repository demonstrates how to implement machine-to-machine payments using 
 - For MPP: [@stripe/link-cli](https://www.npmjs.com/package/@stripe/link-cli) or [Tempo wallet](https://tempo.xyz)
 - For x402: Wallet with USDC on Base
 
+## Stripe API versions
+
+Direct crypto PaymentIntent calls and deposit-address CLI commands use
+`2026-10-28.preview`. The TypeScript MPP and MCP samples delegate Stripe requests
+to mppx, which selects its own preview API version per request. The Stripe
+client's default API version does not override that selection.
+
 ## Getting Started
 
 1. Clone this repository:

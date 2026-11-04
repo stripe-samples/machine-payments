@@ -5,7 +5,7 @@ description = "x402 REST API sample with FastAPI and Stripe"
 requires-python = ">=3.10"
 dependencies = [
     "x402[fastapi,evm]",
-    "stripe>=11.0.0",
+    "stripe>=16.1.0",
     "python-dotenv>=1.0.0",
     "uvicorn>=0.30.0",
     "cdp-sdk>=1.47.1",
