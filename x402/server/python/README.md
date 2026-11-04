@@ -16,7 +16,7 @@ See Stripe's [x402 documentation](https://docs.stripe.com/payments/machine/x402)
 
 1. Create a crypto deposit address:
 ```bash
-stripe post /v1/crypto/deposit_addresses --live --stripe-version 2026-05-27.preview -d network=base
+stripe post /v1/crypto/deposit_addresses --live --stripe-version 2026-10-28.preview -d network=base
 ```
 
 2. Configure environment variables:

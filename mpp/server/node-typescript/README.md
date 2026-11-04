@@ -20,7 +20,7 @@ See Stripe's [Machine Payments Protocol documentation](https://docs.stripe.com/p
 
 1. Create a crypto deposit address:
 ```bash
-stripe post /v1/crypto/deposit_addresses --live --stripe-version 2026-05-27.preview -d network=tempo
+stripe post /v1/crypto/deposit_addresses --live --stripe-version 2026-10-28.preview -d network=tempo
 ```
 
 The server passes this address to mppx during synchronous startup. If no address is provided to `stripe.create`, mppx can instead fetch an existing address or create one.

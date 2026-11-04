@@ -31,7 +31,7 @@ if not TEMPO_DEPOSIT_ADDRESS:
     print("TEMPO_DEPOSIT_ADDRESS environment variable is required", file=sys.stderr)
     print(
         "Create one with: stripe post /v1/crypto/deposit_addresses"
-        " --live --stripe-version 2026-05-27.preview -d network=base",
+        " --live --stripe-version 2026-10-28.preview -d network=base",
         file=sys.stderr,
     )
     raise SystemExit(1)
@@ -47,11 +47,11 @@ if not CDP_API_KEY_ID or not CDP_API_KEY_SECRET:
 
 # Stripe deposit address created via the Stripe CLI:
 # stripe post /v1/crypto/deposit_addresses --live \
-#   --stripe-version 2026-05-27.preview -d network=base
+#   --stripe-version 2026-10-28.preview -d network=base
 TEMPO_DEPOSIT_ADDRESS = TEMPO_DEPOSIT_ADDRESS.lower()
 
 stripe.api_key = STRIPE_SECRET_KEY
-stripe.api_version = "2026-05-27.preview"  # type: ignore[assignment]
+stripe.api_version = "2026-10-28.preview"  # type: ignore[assignment]
 stripe.set_app_info(
     "stripe-samples/machine-payments",
     url="https://github.com/stripe-samples/machine-payments",
@@ -139,7 +139,7 @@ async def record_payment(context) -> None:
         currency="usd",
         confirm=True,
         payment_method_data={"type": "crypto"},
-        payment_method_types=["crypto"],
+        allowed_payment_method_types=["crypto"],
         payment_method_options=cast(
             Any,
             {

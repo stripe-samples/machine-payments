@@ -6,11 +6,13 @@ on:
       - main
     paths:
       - '.github/workflows/ci.yaml'
+      - 'mcp/server/**'
       - 'mpp/server/**'
       - 'x402/server/**'
   pull_request:
     paths:
       - '.github/workflows/ci.yaml'
+      - 'mcp/server/**'
       - 'mpp/server/**'
       - 'x402/server/**'
   workflow_dispatch:
@@ -23,6 +25,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - project_name: mcp
+            project_path: mcp/server/node-typescript
+            node-version: '20'
+          - project_name: mcp
+            project_path: mcp/server/node-typescript
+            node-version: '22'
           - project_name: mpp
             project_path: mpp/server/node-typescript
             node-version: '20'

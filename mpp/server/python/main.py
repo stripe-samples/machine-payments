@@ -31,11 +31,11 @@ if not TEMPO_DEPOSIT_ADDRESS:
     raise ValueError(
         "TEMPO_DEPOSIT_ADDRESS environment variable is required.\n"
         "Create one with: stripe post /v1/crypto/deposit_addresses "
-        "--live --stripe-version 2026-05-27.preview -d network=tempo"
+        "--live --stripe-version 2026-10-28.preview -d network=tempo"
     )
 
 stripe.api_key = STRIPE_SECRET_KEY
-stripe.api_version = "2026-05-27.preview"
+stripe.api_version = "2026-10-28.preview"
 stripe.set_app_info(
     "stripe-samples/machine-payments",
     url="https://github.com/stripe-samples/machine-payments",
@@ -79,7 +79,7 @@ async def get_paid(request: Request, credential: Credential, receipt: Receipt):
             currency="usd",
             confirm=True,
             payment_method_data=cast(Any, {"type": "crypto"}),
-            payment_method_types=["crypto"],
+            allowed_payment_method_types=["crypto"],
             payment_method_options=cast(
                 Any,
                 {

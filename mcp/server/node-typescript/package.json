@@ -13,7 +13,7 @@
     "dotenv": "^17.4.2",
     "hono": "^4.13.1",
     "mppx": "^0.8.12",
-    "stripe": "^22.5.0",
+    "stripe": "^23.1.0",
     "zod": "^3.25.76"
   },
   "devDependencies": {

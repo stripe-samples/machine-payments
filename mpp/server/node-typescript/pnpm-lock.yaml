@@ -21,8 +21,8 @@ importers:
         specifier: ^0.17.0
         version: 0.17.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.7))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.57.5(typescript@7.0.2)(zod@4.6.7))
       stripe:
-        specifier: ^23.0.1
-        version: 23.0.1(@types/node@26.6.3)
+        specifier: ^23.1.0
+        version: 23.1.0(@types/node@26.6.3)
       viem:
         specifier: ^2.57.5
         version: 2.57.5(typescript@7.0.2)(zod@4.6.7)
@@ -1275,8 +1275,8 @@ packages:
   std-env@4.2.0:
     resolution: {integrity: sha512-oCUKSupKTHX53EyjDtuZQ64pjLJ6yYCtpmEw0goYxtjG9KpbRe8KAsl2tBUGU9DyMcJ0RwJ8GqJAFzMXcXW1Rw==}
 
-  stripe@23.0.1:
-    resolution: {integrity: sha512-VFLs9IAzSZ8GIm6/vqhjqOL0fbYrSNYCpgZ3LS3YkSi/i5RnyMpu/Hf9YxPTOCYwc3mZKU3IJvuvKffQH2NLMg==}
+  stripe@23.1.0:
+    resolution: {integrity: sha512-fVUfMSfTPoukfoV//MUKAx2+YxyKmYaYtnAL9VkfnHfaPNQylFdWZMD+zgUFerI8rjbaiER8Vzj2XEUQ2AhAsQ==}
     engines: {node: '>=20'}
     peerDependencies:
       '@types/node': '>=20'
@@ -2520,7 +2520,7 @@ snapshots:
 
   std-env@4.2.0: {}
 
-  stripe@23.0.1(@types/node@26.6.3):
+  stripe@23.1.0(@types/node@26.6.3):
     optionalDependencies:
       '@types/node': 26.6.3
 
