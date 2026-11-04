@@ -7,11 +7,13 @@ on:
     paths:
       - '.github/workflows/ci.yaml'
       - 'mpp/server/**'
+      - 'x402/batch-payout/**'
       - 'x402/server/**'
   pull_request:
     paths:
       - '.github/workflows/ci.yaml'
       - 'mpp/server/**'
+      - 'x402/batch-payout/**'
       - 'x402/server/**'
   workflow_dispatch:
 
@@ -34,6 +36,12 @@ jobs:
             node-version: '20'
           - project_name: x402
             project_path: x402/server/node-typescript
+            node-version: '22'
+          - project_name: x402-batch-payout
+            project_path: x402/batch-payout/node-typescript
+            node-version: '20'
+          - project_name: x402-batch-payout
+            project_path: x402/batch-payout/node-typescript
             node-version: '22'
     defaults:
       run:

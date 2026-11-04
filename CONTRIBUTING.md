@@ -26,6 +26,8 @@ All submissions, including those by project members, require review. We use GitH
 ```
 machine-payments/
 ├── x402/               # x402 protocol integration
+│   ├── batch-payout/
+│   │   └── node-typescript/
 │   └── server/
 │       ├── python/
 │       └── node-typescript/

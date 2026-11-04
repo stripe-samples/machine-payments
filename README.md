@@ -5,6 +5,7 @@ This repository demonstrates how to implement machine-to-machine payments using 
 - **[MPP](./mpp/)** — The Machine Payments Protocol using both Shared Payment Tokens for card payments as well as on-chain crypto payments
 - **[Monetized MCP](./mcp/server/node-typescript/)** — A TypeScript MCP tool that charges agents through MPP Shared Payment Tokens
 - **[x402](./x402/)** — The x402 HTTP payment protocol using on-chain crypto payments
+- **[x402 Batch Payout](./x402/batch-payout/node-typescript/)** — Batch revenue distribution via Spraay Protocol after x402 payment
 
 ## Prerequisites
 
@@ -54,6 +55,7 @@ make ci
 - [Monetized MCP TypeScript](./mcp/server/node-typescript/)
 - [x402 TypeScript](./x402/server/node-typescript/)
 - [x402 Python](./x402/server/python/)
+- [x402 Batch Payout TypeScript](./x402/batch-payout/node-typescript/)
 
 ## Support
 
