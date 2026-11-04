@@ -2,6 +2,7 @@ import crypto from "node:crypto";
 import { serve } from "@hono/node-server";
 import { config } from "dotenv";
 import { Hono } from "hono";
+import { Store } from "mppx";
 import { discovery } from "mppx/hono";
 import { Mppx, stripe } from "mppx/server";
 import StripeClient from "stripe";
@@ -54,6 +55,9 @@ const stripeMachinePayments = stripe.create({
   networkId: process.env.STRIPE_PROFILE_ID!,
   livemode: !process.env.STRIPE_SECRET_KEY!.includes("_test_"),
   depositAddresses: { tempo: tempoDepositAddress },
+  // In-memory replay protection for this single-process sample.
+  // Production servers need a persistent atomic store shared across instances.
+  store: Store.memory(),
 });
 
 const mppx = Mppx.create({
