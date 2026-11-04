@@ -21,8 +21,8 @@ importers:
         specifier: ^2.28.0
         version: 2.28.0(typescript@7.0.2)
       '@x402/fetch':
-        specifier: ^2.27.0
-        version: 2.27.0
+        specifier: ^2.29.0
+        version: 2.29.0
       '@x402/hono':
         specifier: ^2.28.0
         version: 2.28.0(hono@4.13.0)(typescript@7.0.2)
@@ -1169,14 +1169,17 @@ packages:
   '@x402/core@2.28.0':
     resolution: {integrity: sha512-Da/7zKxCKqpBoB4Msc9tFgkAv7tJTD8nG+DSSm+QdXAyJS4PQsmgVSKe17rDJTtlu0pwNbLcOje6MyQ6kaDkig==}
 
+  '@x402/core@2.29.0':
+    resolution: {integrity: sha512-fkS0JqVwHgczteDlwItLRipOlIzm28U9HWLvYnYpnNbfmepoBT/4ux7LjrR0xGD51JHoC8/r+Qo7uCfoAQYeuw==}
+
   '@x402/evm@2.28.0':
     resolution: {integrity: sha512-BZuoaCKMoPQQuMTa4oibvoyI06WdCpgrzgdicUu8d+5NBMAfWb6LAmSQf1KkeiS8C+25/+2JGB4cHSL0VLGnSA==}
 
   '@x402/extensions@2.28.0':
     resolution: {integrity: sha512-M3SVxO8DJnx7gpok/ODQp803jr21s1XrCMholNw0hSgOVvSPRksfTZ+CUNfJwteNaHmaAxGjPelXWBhTCMD9oQ==}
 
-  '@x402/fetch@2.27.0':
-    resolution: {integrity: sha512-lHJsvBLGRTVw2tVBKyiNfnjrTqqXbks6QKAuFMUGlyBgm6ErcZKaW804jqXUpGOSt+UPHscbbkLclEWHrk5gcQ==}
+  '@x402/fetch@2.29.0':
+    resolution: {integrity: sha512-ym/+6Cg7uUqScrE/pCV0sfmKecX46KTk5B/VKyJo579Xn1Z6dq2KiLd04rTvvO2xldLKKluU/3SqpDIgkp6T9Q==}
 
   '@x402/hono@2.28.0':
     resolution: {integrity: sha512-tR/AegvCpluj4AX1uYpqt0Ak7e3RcA2QE9GYrPCzwZTxv2z7gYUl7xE/olaxxDEiEb/yRmlsNAxmL81cARjeKw==}
@@ -1621,6 +1624,9 @@ packages:
 
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
+
+  zod@4.6.7:
+    resolution: {integrity: sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg==}
 
 snapshots:
 
@@ -2511,6 +2517,10 @@ snapshots:
     dependencies:
       zod: 3.25.76
 
+  '@x402/core@2.29.0':
+    dependencies:
+      zod: 4.6.7
+
   '@x402/evm@2.28.0(typescript@7.0.2)':
     dependencies:
       '@x402/core': 2.28.0
@@ -2538,9 +2548,9 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@x402/fetch@2.27.0':
+  '@x402/fetch@2.29.0':
     dependencies:
-      '@x402/core': 2.27.0
+      '@x402/core': 2.29.0
 
   '@x402/hono@2.28.0(hono@4.13.0)(typescript@7.0.2)':
     dependencies:
@@ -2973,3 +2983,5 @@ snapshots:
     optional: true
 
   zod@3.25.76: {}
+
+  zod@4.6.7: {}
