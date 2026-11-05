@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@coinbase/x402':
         specifier: ^2.1.0
-        version: 2.1.0(@x402/evm@2.28.0(typescript@7.0.2))(@x402/extensions@2.28.0(typescript@7.0.2))(typescript@7.0.2)
+        version: 2.1.0(@x402/evm@2.29.0(typescript@7.0.2))(@x402/extensions@2.28.0(typescript@7.0.2))(typescript@7.0.2)
       '@hono/node-server':
         specifier: ^2.1.1
         version: 2.1.1(hono@4.13.0)
@@ -18,8 +18,8 @@ importers:
         specifier: ^2.29.0
         version: 2.29.0
       '@x402/evm':
-        specifier: ^2.28.0
-        version: 2.28.0(typescript@7.0.2)
+        specifier: ^2.29.0
+        version: 2.29.0(typescript@7.0.2)
       '@x402/fetch':
         specifier: ^2.29.0
         version: 2.29.0
@@ -37,7 +37,7 @@ importers:
         version: 23.1.0(@types/node@26.6.3)
       viem:
         specifier: ^2.57.5
-        version: 2.57.5(typescript@7.0.2)(zod@3.25.76)
+        version: 2.57.5(typescript@7.0.2)(zod@4.6.7)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.4.7
@@ -1169,8 +1169,8 @@ packages:
   '@x402/core@2.29.0':
     resolution: {integrity: sha512-fkS0JqVwHgczteDlwItLRipOlIzm28U9HWLvYnYpnNbfmepoBT/4ux7LjrR0xGD51JHoC8/r+Qo7uCfoAQYeuw==}
 
-  '@x402/evm@2.28.0':
-    resolution: {integrity: sha512-BZuoaCKMoPQQuMTa4oibvoyI06WdCpgrzgdicUu8d+5NBMAfWb6LAmSQf1KkeiS8C+25/+2JGB4cHSL0VLGnSA==}
+  '@x402/evm@2.29.0':
+    resolution: {integrity: sha512-Gk4bJ6WoRR3jeT2+vERSPMSkSr1nRL5kjtVh14uoynRm8y+fGFH8xmvlGzuwKT0liA6OLjdr9xjZtN8i0WYk9g==}
 
   '@x402/extensions@2.28.0':
     resolution: {integrity: sha512-M3SVxO8DJnx7gpok/ODQp803jr21s1XrCMholNw0hSgOVvSPRksfTZ+CUNfJwteNaHmaAxGjPelXWBhTCMD9oQ==}
@@ -1664,7 +1664,7 @@ snapshots:
   '@biomejs/cli-win32-x64@2.5.7':
     optional: true
 
-  '@coinbase/cdp-sdk@1.55.0(@x402/core@2.29.0)(@x402/evm@2.28.0(typescript@7.0.2))(@x402/extensions@2.28.0(typescript@7.0.2))(typescript@7.0.2)':
+  '@coinbase/cdp-sdk@1.55.0(@x402/core@2.29.0)(@x402/evm@2.29.0(typescript@7.0.2))(@x402/extensions@2.28.0(typescript@7.0.2))(typescript@7.0.2)':
     dependencies:
       '@solana-program/system': 0.10.0(@solana/kit@5.5.1(typescript@7.0.2))
       '@solana-program/token': 0.9.0(@solana/kit@5.5.1(typescript@7.0.2))
@@ -1680,7 +1680,7 @@ snapshots:
       zod: 3.25.76
     optionalDependencies:
       '@x402/core': 2.29.0
-      '@x402/evm': 2.28.0(typescript@7.0.2)
+      '@x402/evm': 2.29.0(typescript@7.0.2)
       '@x402/extensions': 2.28.0(typescript@7.0.2)
     transitivePeerDependencies:
       - bufferutil
@@ -1689,9 +1689,9 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@coinbase/x402@2.1.0(@x402/evm@2.28.0(typescript@7.0.2))(@x402/extensions@2.28.0(typescript@7.0.2))(typescript@7.0.2)':
+  '@coinbase/x402@2.1.0(@x402/evm@2.29.0(typescript@7.0.2))(@x402/extensions@2.28.0(typescript@7.0.2))(typescript@7.0.2)':
     dependencies:
-      '@coinbase/cdp-sdk': 1.55.0(@x402/core@2.29.0)(@x402/evm@2.28.0(typescript@7.0.2))(@x402/extensions@2.28.0(typescript@7.0.2))(typescript@7.0.2)
+      '@coinbase/cdp-sdk': 1.55.0(@x402/core@2.29.0)(@x402/evm@2.29.0(typescript@7.0.2))(@x402/extensions@2.28.0(typescript@7.0.2))(typescript@7.0.2)
       '@x402/core': 2.29.0
       viem: 2.57.5(typescript@7.0.2)(zod@3.25.76)
       zod: 3.25.76
@@ -1984,11 +1984,11 @@ snapshots:
       '@noble/hashes': 1.8.0
       apg-js: 4.4.0
 
-  '@signinwithethereum/siwe@4.2.0(viem@2.57.5(typescript@7.0.2)(zod@3.25.76))':
+  '@signinwithethereum/siwe@4.2.0(viem@2.57.5(typescript@7.0.2)(zod@4.6.7))':
     dependencies:
       '@signinwithethereum/siwe-parser': 4.2.0
     optionalDependencies:
-      viem: 2.57.5(typescript@7.0.2)(zod@3.25.76)
+      viem: 2.57.5(typescript@7.0.2)(zod@4.6.7)
 
   '@solana-program/system@0.10.0(@solana/kit@5.5.1(typescript@7.0.2))':
     dependencies:
@@ -2514,11 +2514,11 @@ snapshots:
     dependencies:
       zod: 4.6.7
 
-  '@x402/evm@2.28.0(typescript@7.0.2)':
+  '@x402/evm@2.29.0(typescript@7.0.2)':
     dependencies:
-      '@x402/core': 2.28.0
-      viem: 2.57.5(typescript@7.0.2)(zod@3.25.76)
-      zod: 3.25.76
+      '@x402/core': 2.29.0
+      viem: 2.57.5(typescript@7.0.2)(zod@4.6.7)
+      zod: 4.6.7
     transitivePeerDependencies:
       - bufferutil
       - typescript
@@ -2528,7 +2528,7 @@ snapshots:
     dependencies:
       '@noble/curves': 1.9.7
       '@scure/base': 1.2.6
-      '@signinwithethereum/siwe': 4.2.0(viem@2.57.5(typescript@7.0.2)(zod@3.25.76))
+      '@signinwithethereum/siwe': 4.2.0(viem@2.57.5(typescript@7.0.2)(zod@4.6.7))
       '@x402/core': 2.28.0
       ajv: 8.20.0
       jose: 5.10.0
@@ -2565,6 +2565,11 @@ snapshots:
     optionalDependencies:
       typescript: 7.0.2
       zod: 3.25.76
+
+  abitype@1.2.3(typescript@7.0.2)(zod@4.6.7):
+    optionalDependencies:
+      typescript: 7.0.2
+      zod: 4.6.7
 
   ajv@8.20.0:
     dependencies:
@@ -2816,6 +2821,21 @@ snapshots:
     transitivePeerDependencies:
       - zod
 
+  ox@0.14.56(typescript@7.0.2)(zod@4.6.7):
+    dependencies:
+      '@adraffy/ens-normalize': 1.11.1
+      '@noble/ciphers': 1.3.0
+      '@noble/curves': 1.9.1
+      '@noble/hashes': 1.8.0
+      '@scure/bip32': 1.7.0
+      '@scure/bip39': 1.6.0
+      abitype: 1.2.3(typescript@7.0.2)(zod@4.6.7)
+      eventemitter3: 5.0.1
+    optionalDependencies:
+      typescript: 7.0.2
+    transitivePeerDependencies:
+      - zod
+
   picocolors@1.1.1: {}
 
   picomatch@4.0.7: {}
@@ -2925,6 +2945,23 @@ snapshots:
       abitype: 1.2.3(typescript@7.0.2)(zod@3.25.76)
       isows: 1.0.7(ws@8.21.0)
       ox: 0.14.56(typescript@7.0.2)(zod@3.25.76)
+      ws: 8.21.0
+    optionalDependencies:
+      typescript: 7.0.2
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+      - zod
+
+  viem@2.57.5(typescript@7.0.2)(zod@4.6.7):
+    dependencies:
+      '@noble/curves': 1.9.1
+      '@noble/hashes': 1.8.0
+      '@scure/bip32': 1.7.0
+      '@scure/bip39': 1.6.0
+      abitype: 1.2.3(typescript@7.0.2)(zod@4.6.7)
+      isows: 1.0.7(ws@8.21.0)
+      ox: 0.14.56(typescript@7.0.2)(zod@4.6.7)
       ws: 8.21.0
     optionalDependencies:
       typescript: 7.0.2
