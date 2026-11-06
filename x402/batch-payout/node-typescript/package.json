@@ -1,0 +1,35 @@
+{
+  "name": "x402-batch-payout-node-typescript",
+  "private": true,
+  "type": "module",
+  "description": "x402 batch payout sample with Spraay Protocol using Hono",
+  "scripts": {
+    "dev": "tsx main.ts",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@coinbase/x402": "^2.1.0",
+    "@hono/node-server": "^2.1.1",
+    "@x402/core": "^2.27.0",
+    "@x402/evm": "^2.27.0",
+    "@x402/fetch": "^2.27.0",
+    "@x402/hono": "^2.28.0",
+    "dotenv": "^17.4.1",
+    "hono": "^4.11.7",
+    "stripe": "^22.6.2",
+    "viem": "^2.57.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@biomejs/biome",
+      "esbuild"
+    ]
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.7",
+    "@types/node": "^26.6.3",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.2"
+  }
+}
