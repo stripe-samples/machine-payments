@@ -18,8 +18,8 @@ importers:
         specifier: ^4.13.1
         version: 4.13.2
       mppx:
-        specifier: ^0.17.0
-        version: 0.17.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.7))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.57.5(typescript@7.0.2)(zod@4.6.7))
+        specifier: ^0.18.0
+        version: 0.18.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.7))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.57.5(typescript@7.0.2)(zod@4.6.7))
       stripe:
         specifier: ^23.1.0
         version: 23.1.0(@types/node@26.6.3)
@@ -630,10 +630,6 @@ packages:
   '@scure/bip39@1.6.0':
     resolution: {integrity: sha512-+lF0BbLiJNwVlev4eKelw1WWLaiKXw7sSl8T6FvBlWkdX+94aGJ4o8XjUdlyhTCjd8c+B3KT3JfS8P0bLRNU6A==}
 
-  '@stripe/stripe-js@9.17.0':
-    resolution: {integrity: sha512-uidL4OJum5kivsOAQnVfQmYLJ2zdgirtmT0zWgskASZ4TPXxpXQ0MNrzW4NsXB90uEqmPHpSEtciLFbF1QQvNA==}
-    engines: {node: '>=12.16'}
-
   '@types/chai@5.2.3':
     resolution: {integrity: sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==}
 
@@ -935,10 +931,6 @@ packages:
     resolution: {integrity: sha512-EKN1vKAMcZ8MlYMpaNuxN6R9yakzH6uajHcHVTqWJzvu5pWw9DyhbP35HH8MVBQ+dZjAfDxk+A8NiR9KWaXiyQ==}
     engines: {node: '>=18.0.0'}
 
-  eventsource-parser@4.1.1:
-    resolution: {integrity: sha512-zaWNqeSLeyzEAAt2Q6aDBRDRk/VnPmsKqvToyGvv6aahvLv71A4Jw7jG93Hckf11zXurbqgsffvpSgKPoeU1Qw==}
-    engines: {node: '>=22.12'}
-
   eventsource@3.0.7:
     resolution: {integrity: sha512-CRT1WTyuQoD771GW56XEZFQ/ZoSfWid1alKGDYMmkt2yl8UXrVR4pspqWNEcqKvVIzg6PAltWjxcSSPrboA4iA==}
     engines: {node: '>=18.0.0'}
@@ -1078,8 +1070,8 @@ packages:
     resolution: {integrity: sha512-Lbgzdk0h4juoQ9fCKXW4by0UJqj+nOOrI9MJ1sSj4nI8aI2eo1qmvQEie4VD1glsS250n15LsWsYtCugiStS5A==}
     engines: {node: '>=18'}
 
-  mppx@0.17.0:
-    resolution: {integrity: sha512-lKCT7op2VaqqGVK5BpeMrh6mCgSf6gXkJCE9C1+ezdOS5lX3SwQhdS6jVWp+BXffSxy4xtfTMs3WO9V7zE4q3A==}
+  mppx@0.18.0:
+    resolution: {integrity: sha512-YneYGCnMUllEM8CS4oR6nJn7c4tkzQk+VuFHPhm91wj80GcjVXwrU5yuZx5kvArPGTpHXX0zBdAxI4tBzV7pWg==}
     hasBin: true
     peerDependencies:
       '@modelcontextprotocol/sdk': '>=1.25.0'
@@ -1795,8 +1787,6 @@ snapshots:
       '@noble/hashes': 1.8.0
       '@scure/base': 1.2.6
 
-  '@stripe/stripe-js@9.17.0': {}
-
   '@types/chai@5.2.3':
     dependencies:
       '@types/deep-eql': 4.0.2
@@ -2081,8 +2071,6 @@ snapshots:
   eventsource-parser@3.1.1:
     optional: true
 
-  eventsource-parser@4.1.1: {}
-
   eventsource@3.0.7:
     dependencies:
       eventsource-parser: 3.1.1
@@ -2263,10 +2251,8 @@ snapshots:
       mime-db: 1.54.0
     optional: true
 
-  mppx@0.17.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.7))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.57.5(typescript@7.0.2)(zod@4.6.7)):
+  mppx@0.18.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.7))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.57.5(typescript@7.0.2)(zod@4.6.7)):
     dependencies:
-      '@stripe/stripe-js': 9.17.0
-      eventsource-parser: 4.1.1
       ox: 0.14.45(typescript@7.0.2)(zod@4.6.7)
       structured-headers: 2.1.0
       viem: 2.57.5(typescript@7.0.2)(zod@4.6.7)
