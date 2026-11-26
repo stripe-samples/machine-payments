@@ -33,11 +33,11 @@ importers:
         specifier: ^4.11.7
         version: 4.13.0
       stripe:
-        specifier: ^23.1.0
-        version: 23.1.0(@types/node@26.6.3)
+        specifier: ^23.2.0
+        version: 23.2.0(@types/node@26.6.3)
       viem:
         specifier: ^2.57.5
-        version: 2.57.5(typescript@7.0.2)(zod@4.6.7)
+        version: 2.57.5(typescript@7.0.2)(zod@3.25.76)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.6.4
@@ -1236,6 +1236,7 @@ packages:
 
   axios-retry@4.5.0:
     resolution: {integrity: sha512-aR99oXhpEDGo0UuAlYcn2iGRds30k366Zfa05XWScR9QaQD4JYiP3/1Qt1u7YlefUOK+cn0CcwoL1oefavQUlQ==}
+    deprecated: axios-retry is no longer maintained. See https://github.com/softonic/axios-retry for alternatives.
     peerDependencies:
       axios: 0.x || 1.x
 
@@ -1477,8 +1478,8 @@ packages:
   std-env@4.3.0:
     resolution: {integrity: sha512-OtU/EgQ1kIm5KwqQpBC6ZEMXrZRui11w8zgfTWp8cdO9B8OaPsbA8bTHO2P+HNo1VlUTGMVBwPhydu6poeXiag==}
 
-  stripe@23.1.0:
-    resolution: {integrity: sha512-fVUfMSfTPoukfoV//MUKAx2+YxyKmYaYtnAL9VkfnHfaPNQylFdWZMD+zgUFerI8rjbaiER8Vzj2XEUQ2AhAsQ==}
+  stripe@23.2.0:
+    resolution: {integrity: sha512-0W0J4yA9qFO2rnF61v8Y62OiO2SmAR+Cv04VJaFUMpCxiq8lG5bxEYbeSMSpMDR9ofFZGd+Z/iUIgSFbOolmUw==}
     engines: {node: '>=20'}
     peerDependencies:
       '@types/node': '>=20'
@@ -2002,11 +2003,11 @@ snapshots:
       '@noble/hashes': 1.8.0
       apg-js: 4.4.0
 
-  '@signinwithethereum/siwe@4.2.0(viem@2.57.5(typescript@7.0.2)(zod@4.6.7))':
+  '@signinwithethereum/siwe@4.2.0(viem@2.57.5(typescript@7.0.2)(zod@3.25.76))':
     dependencies:
       '@signinwithethereum/siwe-parser': 4.2.0
     optionalDependencies:
-      viem: 2.57.5(typescript@7.0.2)(zod@4.6.7)
+      viem: 2.57.5(typescript@7.0.2)(zod@3.25.76)
 
   '@solana-program/system@0.10.0(@solana/kit@5.5.1(typescript@7.0.2))':
     dependencies:
@@ -2550,7 +2551,7 @@ snapshots:
     dependencies:
       '@noble/curves': 1.9.7
       '@scure/base': 1.2.6
-      '@signinwithethereum/siwe': 4.2.0(viem@2.57.5(typescript@7.0.2)(zod@4.6.7))
+      '@signinwithethereum/siwe': 4.2.0(viem@2.57.5(typescript@7.0.2)(zod@3.25.76))
       '@x402/core': 2.28.0
       ajv: 8.20.0
       jose: 5.10.0
@@ -2908,7 +2909,7 @@ snapshots:
 
   std-env@4.3.0: {}
 
-  stripe@23.1.0(@types/node@26.6.3):
+  stripe@23.2.0(@types/node@26.6.3):
     optionalDependencies:
       '@types/node': 26.6.3
 
