@@ -19,13 +19,13 @@ importers:
         version: 4.13.2
       mppx:
         specifier: ^0.17.0
-        version: 0.17.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.7))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.57.5(typescript@7.0.2)(zod@4.6.7))
+        version: 0.17.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.7))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.58.4)
       stripe:
         specifier: ^23.1.0
         version: 23.1.0(@types/node@26.6.3)
       viem:
-        specifier: ^2.57.5
-        version: 2.57.5(typescript@7.0.2)(zod@4.6.7)
+        specifier: ^2.58.4
+        version: 2.58.4(mppx@0.17.0)(typescript@7.0.2)(zod@4.6.7)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.6.3
@@ -808,6 +808,11 @@ packages:
 
   ajv-formats@3.0.1:
     resolution: {integrity: sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ==}
+    peerDependencies:
+      ajv: ^8.0.0
+    peerDependenciesMeta:
+      ajv:
+        optional: true
 
   ajv@8.20.0:
     resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
@@ -1154,8 +1159,8 @@ packages:
       typescript:
         optional: true
 
-  ox@0.14.56:
-    resolution: {integrity: sha512-Feinlj+deWEam6RIwurRE+eHZ2N3hoUb3AAjQ10BmxRCYIymfqNkv0eZ+4ln4GkgDmSGLD2rGtTMqsFYSVDC6w==}
+  ox@0.14.67:
+    resolution: {integrity: sha512-6v6UlwgsmiyTujZp0aVDuN8uIBAtl/QZadBADFRZ2zp1+CM9TqDzd+rPKJ5PYvWPlCvz8JvoO9dTr42+1PhBhA==}
     peerDependencies:
       typescript: '>=5.4.0'
     peerDependenciesMeta:
@@ -1320,11 +1325,14 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
-  viem@2.57.5:
-    resolution: {integrity: sha512-BaUdS5lJJTxr6hJX17K0AjHbgUhsolsqH8CCbTq1WMunW/I/Siwc9VrTwccCcNPppgqa/gY4TqK8Zl8LLmlTlw==}
+  viem@2.58.4:
+    resolution: {integrity: sha512-zeYi2PliKbmJVbIvudHZrYJLh1XMXci6GBJznQLjhhGPGl9L7Hp/LmelpXhOM9VvlXwnvfW7/2PCgpjnc2j8MQ==}
     peerDependencies:
+      mppx: '>=0.17.0'
       typescript: '>=5.0.4'
     peerDependenciesMeta:
+      mppx:
+        optional: true
       typescript:
         optional: true
 
@@ -2263,13 +2271,13 @@ snapshots:
       mime-db: 1.54.0
     optional: true
 
-  mppx@0.17.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.7))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.57.5(typescript@7.0.2)(zod@4.6.7)):
+  mppx@0.17.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.7))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.58.4):
     dependencies:
       '@stripe/stripe-js': 9.17.0
       eventsource-parser: 4.1.1
       ox: 0.14.45(typescript@7.0.2)(zod@4.6.7)
       structured-headers: 2.1.0
-      viem: 2.57.5(typescript@7.0.2)(zod@4.6.7)
+      viem: 2.58.4(mppx@0.17.0)(typescript@7.0.2)(zod@4.6.7)
       zod: 4.6.7
     optionalDependencies:
       '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.7)
@@ -2319,7 +2327,7 @@ snapshots:
     transitivePeerDependencies:
       - zod
 
-  ox@0.14.56(typescript@7.0.2)(zod@4.6.7):
+  ox@0.14.67(typescript@7.0.2)(zod@4.6.7):
     dependencies:
       '@adraffy/ens-normalize': 1.11.1
       '@noble/ciphers': 1.3.0
@@ -2567,7 +2575,7 @@ snapshots:
   vary@1.1.2:
     optional: true
 
-  viem@2.57.5(typescript@7.0.2)(zod@4.6.7):
+  viem@2.58.4(mppx@0.17.0)(typescript@7.0.2)(zod@4.6.7):
     dependencies:
       '@noble/curves': 1.9.1
       '@noble/hashes': 1.8.0
@@ -2575,9 +2583,10 @@ snapshots:
       '@scure/bip39': 1.6.0
       abitype: 1.2.3(typescript@7.0.2)(zod@4.6.7)
       isows: 1.0.7(ws@8.21.0)
-      ox: 0.14.56(typescript@7.0.2)(zod@4.6.7)
+      ox: 0.14.67(typescript@7.0.2)(zod@4.6.7)
       ws: 8.21.0
     optionalDependencies:
+      mppx: 0.17.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.6.7))(express@5.2.1)(hono@4.13.2)(typescript@7.0.2)(viem@2.58.4)
       typescript: 7.0.2
     transitivePeerDependencies:
       - bufferutil
