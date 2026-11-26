@@ -21,8 +21,8 @@ importers:
         specifier: ^2.30.0
         version: 2.30.0(typescript@7.0.2)
       '@x402/fetch':
-        specifier: ^2.29.0
-        version: 2.29.0
+        specifier: ^2.32.0
+        version: 2.32.0
       '@x402/hono':
         specifier: ^2.28.0
         version: 2.28.0(hono@4.13.0)(typescript@7.0.2)
@@ -37,7 +37,7 @@ importers:
         version: 23.1.0(@types/node@26.6.3)
       viem:
         specifier: ^2.57.5
-        version: 2.57.5(typescript@7.0.2)(zod@4.6.7)
+        version: 2.57.5(typescript@7.0.2)(zod@3.25.76)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.6.4
@@ -1181,14 +1181,17 @@ packages:
   '@x402/core@2.30.0':
     resolution: {integrity: sha512-gvMxCum2QlNI6jI/3NL1jdrmOgtX9sWEWxSIOmeI67/5ndOJvYOtP7JZLSO8o8af+O+A+Vhhjza1NCda0yVppg==}
 
+  '@x402/core@2.32.0':
+    resolution: {integrity: sha512-HyS8vbaR3XP79EIATKGMt8eL0Ql46yrfVDrtv1Inmlx4qJl4NU61cJmTh/pSGOCJIeb7ETNhWR/GQ4XsWZcQIA==}
+
   '@x402/evm@2.30.0':
     resolution: {integrity: sha512-/iaEB820OPJb1JkUqaCTq90FwjbmBB/rAFaH7ZAL2AmcesSVPO/FjdHD2wmXqBzXkEnPG9f6m1SuNpCtVlA9LQ==}
 
   '@x402/extensions@2.28.0':
     resolution: {integrity: sha512-M3SVxO8DJnx7gpok/ODQp803jr21s1XrCMholNw0hSgOVvSPRksfTZ+CUNfJwteNaHmaAxGjPelXWBhTCMD9oQ==}
 
-  '@x402/fetch@2.29.0':
-    resolution: {integrity: sha512-ym/+6Cg7uUqScrE/pCV0sfmKecX46KTk5B/VKyJo579Xn1Z6dq2KiLd04rTvvO2xldLKKluU/3SqpDIgkp6T9Q==}
+  '@x402/fetch@2.32.0':
+    resolution: {integrity: sha512-MxDqmBxQz6I5NWUVu90cQ1XRZayAi8oDpGllDwrwihxfAHloE7eqXkNuFC80IRE3BbMwj8h65aBEaOaiq3EBUQ==}
 
   '@x402/hono@2.28.0':
     resolution: {integrity: sha512-tR/AegvCpluj4AX1uYpqt0Ak7e3RcA2QE9GYrPCzwZTxv2z7gYUl7xE/olaxxDEiEb/yRmlsNAxmL81cARjeKw==}
@@ -1236,6 +1239,7 @@ packages:
 
   axios-retry@4.5.0:
     resolution: {integrity: sha512-aR99oXhpEDGo0UuAlYcn2iGRds30k366Zfa05XWScR9QaQD4JYiP3/1Qt1u7YlefUOK+cn0CcwoL1oefavQUlQ==}
+    deprecated: axios-retry is no longer maintained. See https://github.com/softonic/axios-retry for alternatives.
     peerDependencies:
       axios: 0.x || 1.x
 
@@ -2002,11 +2006,11 @@ snapshots:
       '@noble/hashes': 1.8.0
       apg-js: 4.4.0
 
-  '@signinwithethereum/siwe@4.2.0(viem@2.57.5(typescript@7.0.2)(zod@4.6.7))':
+  '@signinwithethereum/siwe@4.2.0(viem@2.57.5(typescript@7.0.2)(zod@3.25.76))':
     dependencies:
       '@signinwithethereum/siwe-parser': 4.2.0
     optionalDependencies:
-      viem: 2.57.5(typescript@7.0.2)(zod@4.6.7)
+      viem: 2.57.5(typescript@7.0.2)(zod@3.25.76)
 
   '@solana-program/system@0.10.0(@solana/kit@5.5.1(typescript@7.0.2))':
     dependencies:
@@ -2536,6 +2540,10 @@ snapshots:
     dependencies:
       zod: 4.6.7
 
+  '@x402/core@2.32.0':
+    dependencies:
+      zod: 4.6.7
+
   '@x402/evm@2.30.0(typescript@7.0.2)':
     dependencies:
       '@x402/core': 2.30.0
@@ -2550,7 +2558,7 @@ snapshots:
     dependencies:
       '@noble/curves': 1.9.7
       '@scure/base': 1.2.6
-      '@signinwithethereum/siwe': 4.2.0(viem@2.57.5(typescript@7.0.2)(zod@4.6.7))
+      '@signinwithethereum/siwe': 4.2.0(viem@2.57.5(typescript@7.0.2)(zod@3.25.76))
       '@x402/core': 2.28.0
       ajv: 8.20.0
       jose: 5.10.0
@@ -2563,9 +2571,9 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@x402/fetch@2.29.0':
+  '@x402/fetch@2.32.0':
     dependencies:
-      '@x402/core': 2.29.0
+      '@x402/core': 2.32.0
 
   '@x402/hono@2.28.0(hono@4.13.0)(typescript@7.0.2)':
     dependencies:
